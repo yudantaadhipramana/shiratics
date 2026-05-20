@@ -1,0 +1,125 @@
+{
+  "project_name": "LensaData Landing Page",
+  "theme": "dark",
+  "archetype": "Archetype 5 (Jewel & Luxury) infused with Archetype 4 (Swiss/High-Contrast) for enterprise precision",
+  "typography": {
+    "headings": {
+      "family": "Outfit, sans-serif",
+      "weights": ["300", "500", "700"],
+      "usage": "Use Outfit for all display text and section titles. Tightly tracked (tracking-tight) for large text."
+    },
+    "body": {
+      "family": "IBM Plex Sans, sans-serif",
+      "weights": ["400", "500"],
+      "usage": "Use IBM Plex Sans for legibility in dense data areas, paragraphs, and body copy. Relaxed line height (leading-relaxed)."
+    },
+    "rules": [
+      "No generic 'Inter' or 'Roboto'.",
+      "Large headings (text-5xl+) must use tracking-tight or tracking-tighter.",
+      "Overlines must be uppercase, tiny, wide spacing (tracking-[0.2em]).",
+      "Hierarchy gap rule: Jump between heading and sub-heading must not exceed 2 Tailwind steps."
+    ]
+  },
+  "colors": {
+    "background": {
+      "primary": "#040914",
+      "secondary": "#0A162B",
+      "glass": "rgba(10, 22, 43, 0.6)"
+    },
+    "brand": {
+      "deep_blue": "#0D3A70",
+      "teal": "#1F7D9F",
+      "cyan": "#00D1E9",
+      "orange": "#F76F2E",
+      "white": "#FFFFFF",
+      "text_muted": "#8BA0B8"
+    },
+    "rules": [
+      "Use #040914 as the core void background. Do not use pure #000000.",
+      "Use Bright Cyan (#00D1E9) for critical CTAs and active interactive states.",
+      "Use Orange/Red (#F76F2E) for accents, alerts, specific chart lines, or dramatic highlights.",
+      "Glassmorphism must have a 1px border-white/10 to optically separate from the background."
+    ]
+  },
+  "layout_and_spacing": {
+    "system": "Generous Spacing Philosophy (Tailwind Scale)",
+    "bento_grid": "MODE A: The 'Tetris' Grid for Services and Case Studies (asymmetric spans, gap-8 to gap-12).",
+    "rules": [
+      "Containers with borders must have internal padding (p-8 or p-12).",
+      "Mobile-first: grid-cols-1, then md:grid-cols-4 or md:grid-cols-8 for asymmetrical tension.",
+      "Border radius: Use max 8px (rounded-lg) for a premium, sharp enterprise feel."
+    ]
+  },
+  "surfaces": {
+    "header": "Crystal Glass - bg-[#0A162B]/70, backdrop-blur-xl, border-b border-white/10, saturate-150.",
+    "cards": "Flat background bg-[#0A162B], 1px subtle border border-white/10, hover:-translate-y-1 hover:border-[#1F7D9F]/50.",
+    "floating_widgets": "Neumorphism / Glassmorphism mix for orbiting dashboard widgets. High-end glass, 1px delicate inner stroke."
+  },
+  "motion_and_interaction": {
+    "smooth_scroll": "Lenis is MANDATORY. Standard browser scrolling is not allowed.",
+    "scroll_animations": "GSAP + ScrollTrigger for the main scroll story (Chaos -> Intelligence). Staggered text reveals.",
+    "3d_scene": "React Three Fiber (R3F) + Drei for the Data Core Sphere. Use <Environment> and <Float> for premium depth.",
+    "hover_states": "All buttons must have explicit hover states increasing contrast (e.g., hover:bg-[#00D1E9] hover:text-[#040914])."
+  },
+  "assets": {
+    "images": [
+      {
+        "category": "founder_portrait",
+        "url": "https://static.prod-images.emergentagent.com/jobs/5bc84ad8-9ec7-4070-b4fc-c2ae90e768b9/images/47acae42c388d815a286dc7e1f0edda80cc29ef960a189a985a92f163de03425.png",
+        "description": "Founder dramatic portrait with orange/black background"
+      },
+      {
+        "category": "lens_background",
+        "url": "https://static.prod-images.emergentagent.com/jobs/5bc84ad8-9ec7-4070-b4fc-c2ae90e768b9/images/079bdae45110a29c14ee6ed633e66e63067a9b8716886f834b841dae37c837b2.png",
+        "description": "Background graphic for transition or case studies section"
+      },
+      {
+        "category": "case_study_1",
+        "url": "https://static.prod-images.emergentagent.com/jobs/5bc84ad8-9ec7-4070-b4fc-c2ae90e768b9/images/f4ee4873fa6977067286336b92842913b566f4f53ab7c268ab0ba22213e26b8e.png",
+        "description": "FMCG / Abstract data visualization"
+      },
+      {
+        "category": "case_study_2",
+        "url": "https://static.prod-images.emergentagent.com/jobs/5bc84ad8-9ec7-4070-b4fc-c2ae90e768b9/images/9413d9fa641e7f42429698626165ed1b83e48b9626aeb10f8a23df8c12cf09a5.png",
+        "description": "Retail analytics / Supply chain map"
+      },
+      {
+        "category": "case_study_3",
+        "url": "https://static.prod-images.emergentagent.com/jobs/5bc84ad8-9ec7-4070-b4fc-c2ae90e768b9/images/12f8cc7f33dc5346887bd3bcdad0dfc287b521b1a1b018bab54acf335e7b6958.png",
+        "description": "Multi-branch operations / Architectural tech"
+      },
+      {
+        "category": "case_study_4",
+        "url": "https://static.prod-images.emergentagent.com/jobs/5bc84ad8-9ec7-4070-b4fc-c2ae90e768b9/images/ccede91497f6d6db9e8e5747d01ee334cff2b528f916d92e6cfab7ebd3b04bc7.png",
+        "description": "Finance Leaders / Financial market visualization"
+      },
+      {
+        "category": "case_study_5",
+        "url": "https://static.prod-images.emergentagent.com/jobs/5bc84ad8-9ec7-4070-b4fc-c2ae90e768b9/images/0bc2dffc20b1e282dbc0d0c16305ecada9222788ed6b6c14461fed767b2c1e47.png",
+        "description": "Automation / Robotic sleek gears"
+      }
+    ]
+  },
+  "specific_functionalities": {
+    "navigation": "Sticky Navbar with Logo, Nav links, EN/ID language toggle. Must be z-50.",
+    "hero": "Left side: Headline 'Tajam Melihat, Sigap Bertindak' with high contrast typography. Right side: R3F Canvas showing a glowing 3D sphere. Floating Recharts data cards orbiting the sphere.",
+    "scroll_story": "GSAP ScrollTrigger mapping 'Chaos -> Integration -> Intelligence -> Decision'. Pin the section and animate text opacity and background gradients based on scroll progress.",
+    "services_grid": "7-service bento grid. Use 'The Tetris Grid' rule. 3 column layout, span-2 for featured, span-1 for others. Use hover glow tracing beam effects.",
+    "trust_metrics": "Animated counters triggered by GSAP when in view. 5+ years, 300+ outlets, 750+ users, 23 branches, 100M+ rows.",
+    "case_studies": "5 cards displaying abstract AI-generated images provided in assets, focusing on target audience sectors.",
+    "founder": "Dramatic portrait photo layout, dark orange/black backdrop, bio, achievements.",
+    "contact_cta": "Integration of Cal.com free embed, Email display, WhatsApp floating action buttons.",
+    "floating_action_buttons": "Fixed bottom-right WhatsApp and Book Meeting buttons. Use z-50 and backdrop blur."
+  },
+  "testing_attributes": "CRITICAL: All buttons, inputs, links, language toggles, and forms MUST include descriptive data-testid attributes (e.g., 'hero-cta-button', 'whatsapp-fab', 'language-toggle').",
+  "instructions_to_main_agent": [
+    "Write code for standard React (.js/.jsx), NO NEXT.JS. NO Typescript.",
+    "Initialize tailwind with the provided custom colors: #040914, #0A162B, #0D3A70, #1F7D9F, #00D1E9, #F76F2E.",
+    "Build the 3D Sphere using @react-three/fiber and @react-three/drei.",
+    "Integrate GSAP + ScrollTrigger for the storytelling scroll animations.",
+    "Integrate lenis for smooth momentum scrolling.",
+    "Integrate lucide-react for iconography.",
+    "Use pure HTML/Tailwind for layout to ensure asymmetry; avoid restrictive wrapper components.",
+    "Fetch provided image URLs directly from the assets section in this guideline. Do NOT use placeholders."
+  ]
+}
