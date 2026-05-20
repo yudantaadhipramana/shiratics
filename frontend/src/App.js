@@ -41,7 +41,7 @@ function LandingPage() {
   }, []);
 
   return (
-    <div className="bg-[#040914] text-white overflow-x-hidden font-plex">
+    <div className="bg-[#040914] text-white font-plex">
       <Navbar />
       <main>
         <HeroSection />
