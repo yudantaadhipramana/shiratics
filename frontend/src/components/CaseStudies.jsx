@@ -4,11 +4,11 @@ import { ArrowUpRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const CASE_IMAGES = [
-  'https://static.prod-images.emergentagent.com/jobs/5bc84ad8-9ec7-4070-b4fc-c2ae90e768b9/images/f4ee4873fa6977067286336b92842913b566f4f53ab7c268ab0ba22213e26b8e.png',
-  'https://static.prod-images.emergentagent.com/jobs/5bc84ad8-9ec7-4070-b4fc-c2ae90e768b9/images/9413d9fa641e7f42429698626165ed1b83e48b9626aeb10f8a23df8c12cf09a5.png',
-  'https://static.prod-images.emergentagent.com/jobs/5bc84ad8-9ec7-4070-b4fc-c2ae90e768b9/images/12f8cc7f33dc5346887bd3bcdad0dfc287b521b1a1b018bab54acf335e7b6958.png',
-  'https://static.prod-images.emergentagent.com/jobs/5bc84ad8-9ec7-4070-b4fc-c2ae90e768b9/images/ccede91497f6d6db9e8e5747d01ee334cff2b528f916d92e6cfab7ebd3b04bc7.png',
-  'https://static.prod-images.emergentagent.com/jobs/5bc84ad8-9ec7-4070-b4fc-c2ae90e768b9/images/0bc2dffc20b1e282dbc0d0c16305ecada9222788ed6b6c14461fed767b2c1e47.png',
+  'https://customer-assets.emergentagent.com/job_data-core-sphere/artifacts/6vj47x1h_sales%20performance.PNG',
+  'https://customer-assets.emergentagent.com/job_data-core-sphere/artifacts/u002hlkz_Homepage.PNG',
+  'https://customer-assets.emergentagent.com/job_data-core-sphere/artifacts/o94p0zjw_visit%20performance.PNG',
+  'https://customer-assets.emergentagent.com/job_data-core-sphere/artifacts/hjvgy6iq_mapping.PNG',
+  'https://customer-assets.emergentagent.com/job_data-core-sphere/artifacts/3hpw9btj_Brand%20Distribution.PNG',
 ];
 
 function CaseStudyCard({ study, image, index, tall = false }) {

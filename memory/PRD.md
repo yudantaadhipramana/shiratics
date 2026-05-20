@@ -58,7 +58,7 @@ Premium landing page for LensaData, a Business Intelligence & Data Analytics com
 ## Backlog / Next Action Items
 
 ### P0 - Critical (To be done in next iteration)
-- [ ] Real case study images from user (dashboard screenshots)
+- [x] Real case study images from user (dashboard screenshots) — DONE 2025-01-20
 - [ ] Cal.com integration with actual username once account is set up
 - [ ] SEO meta tags in public/index.html
 
