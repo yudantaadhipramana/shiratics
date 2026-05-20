@@ -24,7 +24,11 @@ Premium landing page for LensaData, a Business Intelligence & Data Analytics com
 ### Sections
 1. **Navbar** - Sticky, transparent → glass on scroll, EN/ID language toggle, mobile hamburger
 2. **Hero Section** - Animated Data Core Sphere (Canvas2D, desktop), KPI floating cards, CTA buttons. Mobile-optimised stats grid (4-col compact).
-3. **Scroll Story** - Sticky scroll animation: Chaos → Integration → Intelligence → Decision. Height tightened to 240vh to eliminate dead scroll space.
+3. **Scroll Story** - Sticky scroll animation: Chaos → Integration → Intelligence → Decision. Height set to 260vh. **Each of the 4 stages has a unique, data-consulting-specific illustration** (not abstract icons):
+   - **Chaos**: 6 scattered data-source cards (Excel.xlsx, POS Export, SFA Mobile, ERP Dump, Manual CSV, Email Rpt) with red warning triangles + broken dashed connection lines
+   - **Integration**: ETL pipeline flow — 3 source nodes (ERP/Excel/SFA) → animated data dots flowing through ETL Transform box → Data Warehouse cube
+   - **Intelligence**: Realistic BI dashboard mockup — 3 KPI cards (Revenue Rp 2.4B, Outlets 117K, Conv. 68.4%) + animated sparkline trend (+18.6%) + 7-branch bar chart
+   - **Decision**: Profit forecast +47.3% with confidence meter (92%), forecast line with "OPTIMAL Q4" badge, AI Recommendation card with sparkle, and "APPROVED" stamp
 4. **Trust Metrics** - Animated counters (5+, 300+, 750+, 23, 100M+, National)
 5. **Services Section** - 7-service bento grid
 6. **Case Studies** - 5 cards in 3+2 bento layout. **Clean icon-only design (no dashboard background images)** — accent-glow cards with category icons.
@@ -63,7 +67,8 @@ Premium landing page for LensaData, a Business Intelligence & Data Analytics com
 - Co-Founder Photo (Zayn): https://customer-assets.emergentagent.com/job_data-core-sphere/artifacts/bi9y4y54_Akselo%20Founder%20-%20ZAYN%20%28Fin%29.jpg
 
 ## Changelog
-- **2026-02-20** — Removed Cal.com booking integration (Contact + FAB). Replaced multi-FAB with single direct WhatsApp button. Removed dashboard background images from Case Studies (clean icon-based design). Tightened Scroll Story height from 380vh → 240vh + stage formula adjustment (×3.6) for minimal dead scroll. Comprehensive mobile responsiveness pass across all sections (Hero, ScrollStory, Founder, Services, TrustMetrics, Footer, Navbar).
+- **2026-02-20 (later)** — Redesigned all 4 ScrollStory stage visuals with data-consulting-specific illustrations (Chaos data sources, ETL pipeline, BI dashboard mockup, profit forecast + AI recommendation). Increased visual area to 260–340px and section height tuned to 260vh for balanced sticky composition (no more empty space below heading).
+- **2026-02-20** — Removed Cal.com booking integration (Contact + FAB). Replaced multi-FAB with single direct WhatsApp button. Removed dashboard background images from Case Studies (clean icon-based design). Tightened Scroll Story height + stage formula adjustment for minimal dead scroll. Comprehensive mobile responsiveness pass.
 - **2025-01-20** — Real case study images, Trusted-By marquee with 8 clients, SEO meta tags, branded favicon.
 
 ## Backlog / Next Action Items
