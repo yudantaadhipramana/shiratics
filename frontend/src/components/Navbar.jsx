@@ -37,7 +37,7 @@ export default function Navbar() {
           scrolled ? 'glass-strong shadow-lg shadow-black/30' : 'bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 py-4 flex items-center justify-between">
           <a
             href="#"
             onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
@@ -97,7 +97,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-[72px] left-0 right-0 z-40 glass-strong border-b border-white/10 px-6 py-6 md:hidden"
+            className="fixed top-[72px] left-0 right-0 z-40 glass-strong border-b border-white/10 px-5 sm:px-6 py-6 md:hidden"
           >
             <div className="flex flex-col gap-3">
               {navLinks.map((link) => (

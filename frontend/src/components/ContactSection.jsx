@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MessageCircle, Mail, Calendar, ArrowRight } from 'lucide-react';
+import { MessageCircle, Mail, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function ContactSection() {
@@ -14,7 +14,7 @@ export default function ContactSection() {
       title: c.whatsapp,
       desc: c.whatsappDesc,
       cta: 'Chat on WhatsApp',
-      href: 'https://wa.me/6285117577707',
+      href: 'https://s.id/konsultasi-data',
       testid: 'contact-whatsapp',
     },
     {
@@ -26,19 +26,10 @@ export default function ContactSection() {
       href: 'mailto:lensadata.id@gmail.com',
       testid: 'contact-email',
     },
-    {
-      icon: Calendar,
-      color: '#F76F2E',
-      title: c.booking,
-      desc: c.bookingDesc,
-      cta: 'Book Free Session',
-      href: 'https://s.id/konsultasi-data',
-      testid: 'contact-booking',
-    },
   ];
 
   return (
-    <section id="contact" className="relative py-28 section-gradient" data-testid="contact-section">
+    <section id="contact" className="relative py-20 sm:py-28 section-gradient" data-testid="contact-section">
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -47,13 +38,13 @@ export default function ContactSection() {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <p className="text-[#00D1E9] text-xs font-outfit tracking-[0.2em] uppercase mb-4">
             {c.overline}
           </p>
-          <h2 className="font-outfit font-bold text-4xl lg:text-5xl text-white tracking-tight mb-5">
+          <h2 className="font-outfit font-bold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight mb-5">
             {c.title}
           </h2>
           <p className="text-[#8BA0B8] text-base font-plex max-w-xl mx-auto leading-relaxed">
@@ -62,7 +53,7 @@ export default function ContactSection() {
         </div>
 
         {/* Contact Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12 sm:mb-14 max-w-4xl mx-auto">
           {cards.map((card, i) => (
             <motion.a
               key={i}
@@ -74,7 +65,7 @@ export default function ContactSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.12 }}
-              className="group glass rounded-xl p-8 border border-white/5 transition-all duration-300 hover:-translate-y-1.5 block"
+              className="group glass rounded-xl p-7 sm:p-8 border border-white/5 transition-all duration-300 hover:-translate-y-1.5 block"
               onMouseEnter={(e) => { e.currentTarget.style.borderColor = `${card.color}35`; }}
               onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)'; }}
             >
@@ -90,7 +81,7 @@ export default function ContactSection() {
                 className="inline-flex items-center gap-2 text-sm font-outfit font-medium transition-all duration-200 group-hover:gap-3"
                 style={{ color: card.color }}
               >
-                <span className="truncate max-w-[180px]">{card.cta}</span>
+                <span className="truncate max-w-[220px]">{card.cta}</span>
                 <ArrowRight size={14} className="flex-shrink-0" />
               </div>
             </motion.a>
@@ -100,11 +91,11 @@ export default function ContactSection() {
         {/* Primary CTA */}
         <div className="text-center">
           <a
-            href="https://wa.me/6285117577707"
+            href="https://s.id/konsultasi-data"
             target="_blank"
             rel="noopener noreferrer"
             data-testid="contact-main-cta"
-            className="inline-flex items-center gap-3 bg-[#00D1E9] text-[#040914] font-bold font-outfit px-10 py-4 rounded-xl text-base hover:bg-white transition-all duration-200 hover:shadow-2xl hover:shadow-[#00D1E9]/25"
+            className="inline-flex items-center gap-3 bg-[#00D1E9] text-[#040914] font-bold font-outfit px-8 sm:px-10 py-4 rounded-xl text-base hover:bg-white transition-all duration-200 hover:shadow-2xl hover:shadow-[#00D1E9]/25"
           >
             {c.cta}
             <ArrowRight size={18} />

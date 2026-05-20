@@ -13,25 +13,25 @@ export default function FounderSection() {
   const f = t.founder;
 
   return (
-    <section id="founder" className="relative py-28 bg-[#040914]" data-testid="founder-section">
+    <section id="founder" className="relative py-20 sm:py-28 bg-[#040914]" data-testid="founder-section">
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#0A162B]/40 to-transparent" />
         <div className="absolute bottom-1/3 left-1/4 w-[400px] h-[400px] rounded-full bg-[#F76F2E]/3 blur-[100px]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <p className="text-[#F76F2E] text-xs font-outfit tracking-[0.2em] uppercase mb-4">
             {f.overline}
           </p>
-          <h2 className="font-outfit font-bold text-4xl lg:text-5xl text-white tracking-tight max-w-2xl mx-auto">
+          <h2 className="font-outfit font-bold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight max-w-2xl mx-auto">
             {f.title}
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-start">
 
           {/* Left: Photos */}
           <motion.div
@@ -39,7 +39,7 @@ export default function FounderSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="flex gap-5"
+            className="flex gap-3 sm:gap-5"
           >
             {/* Founder (Danta) - Primary */}
             <div className="flex-1 relative group" data-testid="founder-photo-danta">
@@ -47,11 +47,11 @@ export default function FounderSection() {
                 <img
                   src={FOUNDER_IMG}
                   alt={f.name}
-                  className="w-full h-[340px] object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-64 sm:h-80 lg:h-[340px] object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#040914]/90 via-[#040914]/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <div className="text-white font-outfit font-semibold text-base">{f.name}</div>
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
+                  <div className="text-white font-outfit font-semibold text-sm sm:text-base">{f.name}</div>
                   <div className="text-[#F76F2E] text-xs font-plex mt-0.5">{f.role}</div>
                 </div>
               </div>
@@ -61,16 +61,16 @@ export default function FounderSection() {
             </div>
 
             {/* Co-Founder (Zayn) - Secondary, offset down */}
-            <div className="flex-1 relative group mt-12" data-testid="founder-photo-zayn">
+            <div className="flex-1 relative group mt-6 sm:mt-12" data-testid="founder-photo-zayn">
               <div className="relative overflow-hidden rounded-2xl">
                 <img
                   src={COFOUNDER_IMG}
                   alt={f.cofounder.name}
-                  className="w-full h-[340px] object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-64 sm:h-80 lg:h-[340px] object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#040914]/90 via-[#040914]/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <div className="text-white font-outfit font-semibold text-base">{f.cofounder.name}</div>
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
+                  <div className="text-white font-outfit font-semibold text-sm sm:text-base">{f.cofounder.name}</div>
                   <div className="text-[#00D1E9] text-xs font-plex mt-0.5">{f.cofounder.role}</div>
                 </div>
               </div>
@@ -104,7 +104,6 @@ export default function FounderSection() {
                     key={i}
                     className="text-xs font-outfit px-3 py-1.5 rounded-full"
                     style={{
-                      borderColor: 'rgba(0,209,233,0.28)',
                       color: '#00D1E9',
                       background: 'rgba(0,209,233,0.08)',
                       border: '1px solid rgba(0,209,233,0.28)',

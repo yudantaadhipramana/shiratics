@@ -22,7 +22,7 @@ export default function Footer() {
     <footer className="relative bg-[#040914] border-t border-white/8" data-testid="footer">
       <div className="absolute top-0 left-0 right-0 h-px shimmer-border" />
 
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 py-14 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
 
           {/* Brand */}

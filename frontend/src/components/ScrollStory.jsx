@@ -108,7 +108,9 @@ export default function ScrollStory() {
       const totalHeight = containerRef.current.offsetHeight - window.innerHeight;
       const scrolled = -rect.top;
       const p = Math.max(0, Math.min(1, scrolled / totalHeight));
-      setActiveStage(Math.min(3, Math.floor(p * 4)));
+      // Stages distributed so stage 3 reaches near the end (p ≈ 0.83+),
+      // minimising dead scroll after the final stage locks in.
+      setActiveStage(Math.min(3, Math.floor(p * 3.6)));
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -117,7 +119,7 @@ export default function ScrollStory() {
   const { stages } = t.story;
 
   return (
-    <section ref={containerRef} style={{ height: '380vh' }} data-testid="scroll-story">
+    <section ref={containerRef} style={{ height: '240vh' }} data-testid="scroll-story">
       <div
         className="sticky top-0 h-screen flex items-center overflow-hidden"
         style={{ background: '#040914' }}
@@ -127,12 +129,12 @@ export default function ScrollStory() {
           style={{ background: `radial-gradient(ellipse at center, ${STAGE_BG[activeStage]} 0%, transparent 70%)` }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-          <div className="text-center mb-10">
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 w-full">
+          <div className="text-center mb-8 sm:mb-10">
             <p className="text-[#00D1E9] text-xs font-outfit tracking-[0.2em] uppercase mb-3">
               {t.story.subtitle}
             </p>
-            <h2 className="font-outfit font-bold text-3xl lg:text-5xl text-white tracking-tight">
+            <h2 className="font-outfit font-bold text-2xl sm:text-3xl lg:text-5xl text-white tracking-tight">
               {t.story.title}
             </h2>
           </div>
@@ -158,14 +160,14 @@ export default function ScrollStory() {
                     })}
                   </div>
                   <span
-                    className="absolute mt-14 text-[9px] font-outfit tracking-widest font-medium whitespace-nowrap transition-colors duration-300"
+                    className="absolute mt-14 text-[9px] font-outfit tracking-widest font-medium whitespace-nowrap transition-colors duration-300 hidden sm:block"
                     style={{ color: i === activeStage ? '#fff' : 'rgba(255,255,255,0.25)' }}
                   >
                     {stage.label}
                   </span>
                 </div>
                 {i < stages.length - 1 && (
-                  <div className="w-16 sm:w-24 h-px mx-1 relative overflow-hidden">
+                  <div className="w-10 sm:w-24 h-px mx-1 relative overflow-hidden">
                     <div className="absolute inset-0 bg-white/8" />
                     <div
                       className="absolute inset-0 bg-[#00D1E9] origin-left transition-transform duration-700"
@@ -178,8 +180,8 @@ export default function ScrollStory() {
           </div>
 
           {/* Content */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-6">
-            <div className="space-y-4 min-h-[160px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mt-6">
+            <div className="space-y-4 min-h-[140px] relative">
               {stages.map((stage, i) => (
                 <motion.div
                   key={i}
@@ -208,17 +210,17 @@ export default function ScrollStory() {
                       >
                         {String(i + 1).padStart(2, '0')} / 04
                       </div>
-                      <h3 className="text-2xl lg:text-3xl font-outfit font-bold text-white mb-3">
+                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-outfit font-bold text-white mb-3">
                         {stage.title}
                       </h3>
-                      <p className="text-[#8BA0B8] text-base leading-relaxed">{stage.desc}</p>
+                      <p className="text-[#8BA0B8] text-sm sm:text-base leading-relaxed">{stage.desc}</p>
                     </div>
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            <div className="relative h-56 flex items-center justify-center">
+            <div className="relative h-44 sm:h-56 flex items-center justify-center">
               {stages.map((stage, i) => (
                 <motion.div
                   key={i}

@@ -20,13 +20,13 @@ export default function ServicesSection() {
   const services = t.services.items;
 
   return (
-    <section id="services" className="relative py-28 bg-[#040914]" data-testid="services-section">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="max-w-2xl mb-16">
+    <section id="services" className="relative py-20 sm:py-28 bg-[#040914]" data-testid="services-section">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6">
+        <div className="max-w-2xl mb-12 sm:mb-16">
           <p className="text-[#00D1E9] text-xs font-outfit tracking-[0.2em] uppercase mb-4">
             WHAT WE DO
           </p>
-          <h2 className="font-outfit font-bold text-4xl lg:text-5xl text-white tracking-tight mb-4">
+          <h2 className="font-outfit font-bold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight mb-4">
             {t.services.title}
           </h2>
           <p className="text-[#8BA0B8] text-base font-plex leading-relaxed">

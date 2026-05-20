@@ -41,7 +41,7 @@ function MetricItem({ rawValue, label, isActive, delay }) {
       style={{ animationDelay: `${delay}ms` }}
     >
       <span
-        className="font-outfit font-bold text-4xl lg:text-5xl counter-text leading-none mb-2 gradient-text-cyan"
+        className="font-outfit font-bold text-3xl sm:text-4xl lg:text-5xl counter-text leading-none mb-2 gradient-text-cyan"
         data-testid={`metric-value-${label.toLowerCase().replace(/\s+/g, '-')}`}
       >
         {isNational ? rawValue : (isActive ? `${count}${suffix}` : `0${suffix}`)}
@@ -78,7 +78,7 @@ export default function TrustMetrics() {
       <div className="absolute top-0 left-0 right-0 h-px shimmer-border" />
       <div className="absolute bottom-0 left-0 right-0 h-px shimmer-border" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 divide-x divide-white/8">
           {metrics.map((metric, i) => (
             <MetricItem

@@ -24,8 +24,8 @@ export default function HeroSection() {
         <div className="absolute top-1/4 left-1/2 w-48 h-48 rounded-full bg-[#F76F2E]/4 blur-[60px]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-16 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center min-h-[80vh]">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 pt-24 sm:pt-28 pb-14 sm:pb-16 w-full">
+        <div className="grid lg:grid-cols-2 gap-10 xl:gap-20 items-center lg:min-h-[80vh]">
 
           {/* Left: Text Content */}
           <div className="flex flex-col gap-6">
@@ -47,10 +47,10 @@ export default function HeroSection() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="font-outfit font-bold tracking-tight"
             >
-              <span className="text-5xl sm:text-6xl lg:text-7xl text-white block leading-[1.05]">
+              <span className="text-4xl sm:text-6xl lg:text-7xl text-white block leading-[1.05]">
                 {t.hero.headline1}
               </span>
-              <span className="text-5xl sm:text-6xl lg:text-7xl block leading-[1.05] gradient-text">
+              <span className="text-4xl sm:text-6xl lg:text-7xl block leading-[1.05] gradient-text">
                 {t.hero.headline2}
               </span>
             </motion.h1>
@@ -101,12 +101,12 @@ export default function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex items-center gap-8 pt-4 border-t border-white/8"
+              className="grid grid-cols-4 gap-3 sm:flex sm:items-center sm:gap-8 pt-4 border-t border-white/8"
             >
               {[['5+', 'Yrs Exp'], ['750+', 'Users'], ['100M+', 'Rows'], ['23', 'Branches']].map(([val, lbl]) => (
                 <div key={lbl} className="flex flex-col">
-                  <span className="text-[#00D1E9] font-outfit font-bold text-xl leading-tight">{val}</span>
-                  <span className="text-white/35 text-xs font-plex">{lbl}</span>
+                  <span className="text-[#00D1E9] font-outfit font-bold text-base sm:text-xl leading-tight">{val}</span>
+                  <span className="text-white/35 text-[10px] sm:text-xs font-plex">{lbl}</span>
                 </div>
               ))}
             </motion.div>

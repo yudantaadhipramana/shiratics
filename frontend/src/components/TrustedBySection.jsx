@@ -63,12 +63,12 @@ export default function TrustedBySection() {
       <div className="relative">
         {/* Left fade */}
         <div
-          className="absolute left-0 top-0 bottom-0 w-36 z-10 pointer-events-none"
+          className="absolute left-0 top-0 bottom-0 w-16 sm:w-36 z-10 pointer-events-none"
           style={{ background: 'linear-gradient(to right, #040914, transparent)' }}
         />
         {/* Right fade */}
         <div
-          className="absolute right-0 top-0 bottom-0 w-36 z-10 pointer-events-none"
+          className="absolute right-0 top-0 bottom-0 w-16 sm:w-36 z-10 pointer-events-none"
           style={{ background: 'linear-gradient(to left, #040914, transparent)' }}
         />
 
