@@ -59,6 +59,7 @@ Premium landing page for LensaData, a Business Intelligence & Data Analytics com
 
 ### P0 - Critical (To be done in next iteration)
 - [x] Real case study images from user (dashboard screenshots) — DONE 2025-01-20
+- [x] "Trusted by" client logo strip with auto-scrolling marquee — DONE 2025-01-20 (5 clients: DIM, PT FAST, SAS, CV Sejahtera, CPS)
 - [ ] Cal.com integration with actual username once account is set up
 - [ ] SEO meta tags in public/index.html
 

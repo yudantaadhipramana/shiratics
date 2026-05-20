@@ -93,6 +93,11 @@ html, body {
   100% { background-position: 200% 0; }
 }
 
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
 /* Counter font */
 .counter-text {
   font-variant-numeric: tabular-nums;

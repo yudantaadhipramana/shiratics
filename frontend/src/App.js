@@ -13,6 +13,7 @@ import FounderSection from './components/FounderSection';
 import ContactSection from './components/ContactSection';
 import FloatingActions from './components/FloatingActions';
 import Footer from './components/Footer';
+import TrustedBySection from './components/TrustedBySection';
 
 function LandingPage() {
   useEffect(() => {
@@ -46,6 +47,7 @@ function LandingPage() {
         <HeroSection />
         <ScrollStory />
         <TrustMetrics />
+        <TrustedBySection />
         <ServicesSection />
         <CaseStudies />
         <FounderSection />
