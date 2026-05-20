@@ -2,7 +2,7 @@ import React from 'react';
 
 const CLIENTS = [
   {
-    url: 'https://customer-assets.emergentagent.com/job_data-core-sphere/artifacts/fjrqhcpn_LOGO%20DIM%20teks%20hitam.png',
+    url: 'https://customer-assets.emergentagent.com/job_data-core-sphere/artifacts/gx73ea5b_LOGO%20DIM%20teks%20putih.png',
     name: 'Dwikarya Indonesia Mandiri',
   },
   {
@@ -20,6 +20,18 @@ const CLIENTS = [
   {
     url: 'https://customer-assets.emergentagent.com/job_data-core-sphere/artifacts/mp95ippq_LOGO%20CPS%20PUTIH.png',
     name: 'Celebes Putera Sejahtera',
+  },
+  {
+    url: 'https://customer-assets.emergentagent.com/job_data-core-sphere/artifacts/tai450zy_CV%20KTI.PNG',
+    name: 'CV. Karya Tembakau Inti',
+  },
+  {
+    url: 'https://customer-assets.emergentagent.com/job_data-core-sphere/artifacts/z3932j52_CV%20KTS.PNG',
+    name: 'PT. Karya Tembakau Sejahtera',
+  },
+  {
+    url: 'https://customer-assets.emergentagent.com/job_data-core-sphere/artifacts/sqo1t7py_PT%20CDPS.png',
+    name: 'PT CDPS',
   },
 ];
 
@@ -65,7 +77,7 @@ export default function TrustedBySection() {
           className="flex items-center gap-5"
           style={{
             width: 'max-content',
-            animation: 'marqueeScroll 22s linear infinite',
+            animation: 'marqueeScroll 30s linear infinite',
           }}
           data-testid="trusted-by-marquee"
         >
@@ -74,9 +86,9 @@ export default function TrustedBySection() {
               key={i}
               className="flex-shrink-0 flex items-center justify-center rounded-xl transition-all duration-400 group cursor-default"
               style={{
-                width: 168,
-                height: 84,
-                padding: '12px 18px',
+                width: 188,
+                height: 88,
+                padding: '12px 20px',
                 background: 'rgba(255,255,255,0.04)',
                 border: '1px solid rgba(255,255,255,0.07)',
               }}
