@@ -16,9 +16,9 @@ const CASE_META = [
 // Index 3 = Market Intelligence System (per spec).
 const TAG_COLOR_OVERRIDES = {
   3: [
-    { bg: 'rgba(0,255,255,0.15)',   text: '#046ceb', border: '#046ceb', shadow: 'rgba(0,245,255,0.35)' },
-    { bg: 'rgba(138,43,226,0.18)',  text: '#046ceb', border: '#046ceb', shadow: 'rgba(168,85,247,0.35)' },
-    { bg: 'rgba(255,140,0,0.18)',   text: '#046ceb', border: '#046ceb', shadow: 'rgba(255,140,0,0.35)' },
+    { bg: 'rgba(0,255,255,0.15)',   text: '#00F5FF', border: '#00F5FF', shadow: 'rgba(0,245,255,0.35)' },
+    { bg: 'rgba(138,43,226,0.18)',  text: '#C084FC', border: '#A855F7', shadow: 'rgba(168,85,247,0.35)' },
+    { bg: 'rgba(255,140,0,0.18)',   text: '#FFB347', border: '#FF8C00', shadow: 'rgba(255,140,0,0.35)' },
   ],
 };
 
