@@ -8,7 +8,7 @@ const CASE_META = [
   { icon: BarChart3,       color: '#00D1E9', accent: 'rgba(0,209,233,0.10)' },
   { icon: LayoutDashboard, color: '#00D1E9', accent: 'rgba(0,209,233,0.10)' },
   { icon: Bot,             color: '#F76F2E', accent: 'rgba(247,111,46,0.10)' },
-  { icon: Map,             color: '#0D3A70', accent: 'rgba(13,58,112,0.18)' },
+  { icon: Map,             color: '#046ceb', accent: 'rgba(13,58,112,0.18)' },
   { icon: Workflow,        color: '#00D1E9', accent: 'rgba(0,209,233,0.10)' },
 ];
 
@@ -16,9 +16,9 @@ const CASE_META = [
 // Index 3 = Market Intelligence System (per spec).
 const TAG_COLOR_OVERRIDES = {
   3: [
-    { bg: 'rgba(0,255,255,0.15)',   text: '#00F5FF', border: '#00F5FF', shadow: 'rgba(0,245,255,0.35)' },
-    { bg: 'rgba(138,43,226,0.18)',  text: '#C084FC', border: '#A855F7', shadow: 'rgba(168,85,247,0.35)' },
-    { bg: 'rgba(255,140,0,0.18)',   text: '#FFB347', border: '#FF8C00', shadow: 'rgba(255,140,0,0.35)' },
+    { bg: 'rgba(0,255,255,0.15)',   text: '#046ceb', border: '#046ceb', shadow: 'rgba(0,245,255,0.35)' },
+    { bg: 'rgba(138,43,226,0.18)',  text: '#046ceb', border: '#046ceb', shadow: 'rgba(168,85,247,0.35)' },
+    { bg: 'rgba(255,140,0,0.18)',   text: '#046ceb', border: '#046ceb', shadow: 'rgba(255,140,0,0.35)' },
   ],
 };
 
@@ -83,13 +83,16 @@ function CaseStudyCard({ study, meta, index }) {
         {study.desc}
       </p>
 
-      <div
-        className="relative flex items-center gap-1.5 mt-5 pt-4 border-t border-white/5 text-xs font-outfit transition-colors duration-300"
-        style={{ color: meta.color }}
+      <a
+      href="https://s.id/LensaData"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="relative inline-flex items-center gap-1.5 mt-5 pt-4 border-t border-white/5 text-xs font-outfit hover:gap-2 transition-all"
+      style={{ color: meta.color }}
       >
-        <span>View Details</span>
-        <ArrowUpRight size={12} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-      </div>
+      <span>View Details</span>
+      <ArrowUpRight size={12} />
+      </a>
     </motion.div>
   );
 }
