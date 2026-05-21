@@ -1,18 +1,31 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, BarChart3, Users, Bot, Map, Workflow } from 'lucide-react';
+import { ArrowUpRight, BarChart3, LayoutDashboard, Bot, Map, Workflow } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
+// Per-card visual metadata (icon + accent color + ambient glow tint)
 const CASE_META = [
-  { icon: BarChart3, color: '#00D1E9', accent: 'rgba(0,209,233,0.10)' },
-  { icon: Users,     color: '#1F7D9F', accent: 'rgba(31,125,159,0.10)' },
-  { icon: Bot,       color: '#F76F2E', accent: 'rgba(247,111,46,0.10)' },
-  { icon: Map,       color: '#0D3A70', accent: 'rgba(13,58,112,0.18)' },
-  { icon: Workflow,  color: '#00D1E9', accent: 'rgba(0,209,233,0.10)' },
+  { icon: BarChart3,       color: '#00D1E9', accent: 'rgba(0,209,233,0.10)' },
+  { icon: LayoutDashboard, color: '#00D1E9', accent: 'rgba(0,209,233,0.10)' },
+  { icon: Bot,             color: '#F76F2E', accent: 'rgba(247,111,46,0.10)' },
+  { icon: Map,             color: '#0D3A70', accent: 'rgba(13,58,112,0.18)' },
+  { icon: Workflow,        color: '#00D1E9', accent: 'rgba(0,209,233,0.10)' },
 ];
+
+// Optional per-tag color overrides for cards that need stronger contrast.
+// Index 3 = Market Intelligence System (per spec).
+const TAG_COLOR_OVERRIDES = {
+  3: [
+    { bg: 'rgba(0,255,255,0.15)',   text: '#00F5FF', border: '#00F5FF', shadow: 'rgba(0,245,255,0.35)' },
+    { bg: 'rgba(138,43,226,0.18)',  text: '#C084FC', border: '#A855F7', shadow: 'rgba(168,85,247,0.35)' },
+    { bg: 'rgba(255,140,0,0.18)',   text: '#FFB347', border: '#FF8C00', shadow: 'rgba(255,140,0,0.35)' },
+  ],
+};
 
 function CaseStudyCard({ study, meta, index }) {
   const Icon = meta.icon;
+  const tagOverrides = TAG_COLOR_OVERRIDES[index];
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -22,52 +35,56 @@ function CaseStudyCard({ study, meta, index }) {
       data-testid={`case-study-card-${index}`}
       className="group relative overflow-hidden rounded-2xl border border-white/8 bg-white/[0.025] hover:border-white/16 hover:bg-white/[0.04] transition-all duration-400 p-6 sm:p-7 h-full flex flex-col"
     >
-      {/* Soft accent glow */}
       <div
         className="absolute -top-16 -right-16 w-48 h-48 rounded-full blur-3xl opacity-60 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none"
         style={{ background: meta.accent }}
       />
 
-      {/* Icon */}
       <div
         className="relative w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
-        style={{
-          background: `${meta.color}14`,
-          border: `1px solid ${meta.color}30`,
-        }}
+        style={{ background: `${meta.color}14`, border: `1px solid ${meta.color}30` }}
       >
         <Icon size={22} color={meta.color} strokeWidth={1.8} />
       </div>
 
-      {/* Tags */}
       <div className="relative flex flex-wrap gap-1.5 mb-4">
-        {study.tags.map((tag, i) => (
-          <span
-            key={i}
-            className="text-[9px] font-outfit font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full"
-            style={{
-              background: `${meta.color}12`,
-              color: meta.color,
-              border: `1px solid ${meta.color}22`,
-            }}
-          >
-            {tag}
-          </span>
-        ))}
+        {study.tags.map((tag, i) => {
+          const ov = tagOverrides && tagOverrides[i];
+          const tagStyle = ov
+            ? {
+                background: ov.bg,
+                color: ov.text,
+                border: `1px solid ${ov.border}`,
+                boxShadow: `0 0 12px ${ov.shadow}, inset 0 0 6px ${ov.shadow}`,
+                fontWeight: 600,
+              }
+            : {
+                background: `${meta.color}12`,
+                color: meta.color,
+                border: `1px solid ${meta.color}22`,
+              };
+          return (
+            <span
+              key={i}
+              className="text-[9px] font-outfit uppercase tracking-wider px-2.5 py-1 rounded-full"
+              style={tagStyle}
+            >
+              {tag}
+            </span>
+          );
+        })}
       </div>
 
-      {/* Title */}
       <h3 className="relative font-outfit font-semibold text-white text-lg sm:text-xl leading-snug mb-3 group-hover:text-[#00D1E9] transition-colors duration-300">
         {study.title}
       </h3>
 
-      {/* Desc */}
       <p className="relative text-[#8BA0B8] text-sm leading-relaxed font-plex flex-1">
         {study.desc}
       </p>
 
-      {/* Footer */}
-      <div className="relative flex items-center gap-1.5 mt-5 pt-4 border-t border-white/5 text-xs font-outfit transition-colors duration-300"
+      <div
+        className="relative flex items-center gap-1.5 mt-5 pt-4 border-t border-white/5 text-xs font-outfit transition-colors duration-300"
         style={{ color: meta.color }}
       >
         <span>View Details</span>
@@ -96,14 +113,12 @@ export default function CaseStudies() {
           </p>
         </div>
 
-        {/* 3-column top row */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-4 sm:mb-5">
           {studies.slice(0, 3).map((study, i) => (
             <CaseStudyCard key={i} study={study} meta={CASE_META[i]} index={i} />
           ))}
         </div>
 
-        {/* 2-column bottom row */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
           {studies.slice(3, 5).map((study, i) => (
             <CaseStudyCard key={i + 3} study={study} meta={CASE_META[i + 3]} index={i + 3} />

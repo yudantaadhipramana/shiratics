@@ -67,8 +67,17 @@ Premium landing page for LensaData, a Business Intelligence & Data Analytics com
 - Co-Founder Photo (Zayn): https://customer-assets.emergentagent.com/job_data-core-sphere/artifacts/bi9y4y54_Akselo%20Founder%20-%20ZAYN%20%28Fin%29.jpg
 
 ## Changelog
-- **2026-02-20 (later)** — Redesigned all 4 ScrollStory stage visuals with data-consulting-specific illustrations (Chaos data sources, ETL pipeline, BI dashboard mockup, profit forecast + AI recommendation). Increased visual area to 260–340px and section height tuned to 260vh for balanced sticky composition (no more empty space below heading).
-- **2026-02-20** — Removed Cal.com booking integration (Contact + FAB). Replaced multi-FAB with single direct WhatsApp button. Removed dashboard background images from Case Studies (clean icon-based design). Tightened Scroll Story height + stage formula adjustment for minimal dead scroll. Comprehensive mobile responsiveness pass.
+- **2026-02-21** — Major content refresh (10 tasks completed):
+  - Hero headline updated to emotional/tension-focused: "Your Business Is Growing. But Is It Really Under Control?"
+  - DataSphere KPIs replaced with 7 service roles (Power BI Developer, Data Engineer, Business Intelligence, Data Analyst, Business Analyst, Market Survey Analyst, AI Automation Strategic); DataSphere now visible & responsive on mobile (4 priority badges visible at <md)
+  - Hero mini stats: 6T+ IDR / 750+ Users / 23 Branches / 100M+ Records
+  - TrustMetrics fully rebuilt with 4 enterprise-scale metric cards: icons (Building/Users/Network/Database), enlarged glowing numbers (text-4xl→5xl→[3.4rem]) with double textShadow, descriptions, vertical+horizontal dividers, hover pulse effect
+  - Case Studies: "SFA/DMS Ecosystem" replaced with "Enterprise Power BI Dashboard" (POWER BI / ENTERPRISE / REAL-TIME tags, LayoutDashboard icon)
+  - Case Studies: Market Intelligence System tags now use per-tag high-contrast colors (cyan #00F5FF, purple #C084FC, orange #FFB347) with glow + 600 weight
+  - Team section rebuilt as 3-member grid (Yudanta, Zainuddin, Imron Rosyadi - AI Engineer) with shared team bio (no longer Yudanta-specific)
+  - Instagram added: Contact section (3rd card, pink Instagram icon → @lensa_data.id) + Footer link
+- **2026-02-20 (later)** — Redesigned all 4 ScrollStory stage visuals with data-consulting-specific illustrations + fixed sticky positioning bug (`overflow-x: clip` instead of `hidden`).
+- **2026-02-20** — Removed Cal.com booking, single direct WhatsApp FAB, clean icon-based case studies, mobile responsiveness pass.
 - **2025-01-20** — Real case study images, Trusted-By marquee with 8 clients, SEO meta tags, branded favicon.
 
 ## Backlog / Next Action Items

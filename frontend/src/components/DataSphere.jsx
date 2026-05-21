@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useCallback } from 'react';
+import React, { useRef, useEffect, useCallback } from 'react';
 
 function hexToRgb(hex) {
   const r = parseInt(hex.slice(1, 3), 16);
@@ -38,9 +38,9 @@ export default function DataSphere() {
     }));
 
     const nodes = [
-      { radius: 0.68, speed: 0.38, offset: 0, tilt: 0.28, color: '#00D1E9', size: 6 },
-      { radius: 0.62, speed: 0.32, offset: 2.1, tilt: 0.5, color: '#F76F2E', size: 5 },
-      { radius: 0.76, speed: 0.48, offset: 4.2, tilt: 0.18, color: '#1F7D9F', size: 5.5 },
+      { radius: 0.68, speed: 0.38, offset: 0,    tilt: 0.28, color: '#00D1E9', size: 6 },
+      { radius: 0.62, speed: 0.32, offset: 2.1,  tilt: 0.5,  color: '#F76F2E', size: 5 },
+      { radius: 0.76, speed: 0.48, offset: 4.2,  tilt: 0.18, color: '#1F7D9F', size: 5.5 },
       { radius: 0.65, speed: 0.28, offset: 1.05, tilt: 0.22, color: '#00D1E9', size: 4.5 },
       { radius: 0.72, speed: 0.44, offset: 3.15, tilt: 0.42, color: '#F76F2E', size: 5 },
       { radius: 0.58, speed: 0.54, offset: 5.25, tilt: 0.12, color: '#1F7D9F', size: 6 },
@@ -50,6 +50,7 @@ export default function DataSphere() {
       const dpr = Math.min(window.devicePixelRatio, 2);
       canvas.width = canvas.offsetWidth * dpr;
       canvas.height = canvas.offsetHeight * dpr;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.scale(dpr, dpr);
     }
     resize();
@@ -67,7 +68,6 @@ export default function DataSphere() {
       const cy = h * 0.5;
       const r = Math.min(w, h) * 0.27;
 
-      // Smooth mouse interpolation
       mouseRef.current.x = lerp(mouseRef.current.x, targetMouseRef.current.x, 0.06);
       mouseRef.current.y = lerp(mouseRef.current.y, targetMouseRef.current.y, 0.06);
       const mx = mouseRef.current.x;
@@ -77,7 +77,6 @@ export default function DataSphere() {
 
       ctx.clearRect(0, 0, w, h);
 
-      // ── OUTER AMBIENT GLOW ──
       const outerGlow = ctx.createRadialGradient(cx, cy, r * 0.4, cx, cy, r * 2.8);
       outerGlow.addColorStop(0, 'rgba(0,209,233,0.07)');
       outerGlow.addColorStop(0.5, 'rgba(13,58,112,0.04)');
@@ -87,11 +86,10 @@ export default function DataSphere() {
       ctx.fillStyle = outerGlow;
       ctx.fill();
 
-      // ── ORBITAL RINGS ──
       const rings = [
-        { scaleX: 1.44, scaleY: 0.32, rot: time * 0.2, color: '#00D1E9', op: 0.42, lw: 1.6 },
-        { scaleX: 1.7, scaleY: 0.38, rot: -time * 0.28, color: '#F76F2E', op: 0.28, lw: 1 },
-        { scaleX: 1.95, scaleY: 0.22, rot: time * 0.14, color: '#1F7D9F', op: 0.18, lw: 0.8 },
+        { scaleX: 1.44, scaleY: 0.32, rot: time * 0.2,  color: '#00D1E9', op: 0.42, lw: 1.6 },
+        { scaleX: 1.7,  scaleY: 0.38, rot: -time * 0.28, color: '#F76F2E', op: 0.28, lw: 1 },
+        { scaleX: 1.95, scaleY: 0.22, rot: time * 0.14,  color: '#1F7D9F', op: 0.18, lw: 0.8 },
       ];
       rings.forEach(ring => {
         ctx.save();
@@ -107,7 +105,6 @@ export default function DataSphere() {
         ctx.globalAlpha = 1;
       });
 
-      // ── PARTICLES ──
       const pulseFactor = 1 + Math.sin(time * 0.7) * 0.025;
       particles.forEach(p => {
         p.angle += p.speed;
@@ -121,14 +118,12 @@ export default function DataSphere() {
         ctx.fill();
       });
 
-      // ── ORBITING DATA NODES ──
       nodes.forEach(node => {
         const angle = time * node.speed + node.offset;
         const nx = cx + Math.cos(angle) * r * node.radius * 1.6 + tiltX * 0.7;
         const ny = cy + Math.sin(angle) * r * node.radius * Math.sin(node.tilt) + tiltY * 0.5;
         const [nr, ng, nb] = hexToRgb(node.color);
 
-        // Node glow halo
         const grd = ctx.createRadialGradient(nx, ny, 0, nx, ny, node.size * 4.5);
         grd.addColorStop(0, `rgba(${nr},${ng},${nb},0.35)`);
         grd.addColorStop(1, `rgba(${nr},${ng},${nb},0)`);
@@ -137,7 +132,6 @@ export default function DataSphere() {
         ctx.fillStyle = grd;
         ctx.fill();
 
-        // Node core
         ctx.beginPath();
         ctx.arc(nx, ny, node.size, 0, Math.PI * 2);
         ctx.fillStyle = node.color;
@@ -147,12 +141,10 @@ export default function DataSphere() {
         ctx.shadowBlur = 0;
       });
 
-      // ── MAIN SPHERE ──
       const sr = r * pulseFactor;
       const scx = cx + tiltX * 0.6;
       const scy = cy + tiltY * 0.5;
 
-      // Sphere body gradient
       const sphereGrad = ctx.createRadialGradient(
         scx - sr * 0.28 + tiltX * 0.4,
         scy - sr * 0.32 + tiltY * 0.3,
@@ -168,14 +160,12 @@ export default function DataSphere() {
       ctx.fillStyle = sphereGrad;
       ctx.fill();
 
-      // Sphere outline
       ctx.beginPath();
       ctx.arc(scx, scy, sr, 0, Math.PI * 2);
       ctx.strokeStyle = 'rgba(0,209,233,0.22)';
       ctx.lineWidth = 1.5;
       ctx.stroke();
 
-      // Wireframe latitude lines
       [-0.5, 0, 0.5].forEach(lat => {
         const latR = sr * Math.sqrt(1 - lat * lat);
         const latY = scy + lat * sr;
@@ -188,7 +178,6 @@ export default function DataSphere() {
         }
       });
 
-      // Wireframe longitude lines
       for (let i = 0; i < 5; i++) {
         const a = (i / 5) * Math.PI;
         ctx.save();
@@ -201,7 +190,6 @@ export default function DataSphere() {
         ctx.restore();
       }
 
-      // Inner core glow
       const coreGrad = ctx.createRadialGradient(scx, scy, 0, scx, scy, sr * 0.55);
       coreGrad.addColorStop(0, 'rgba(0,209,233,0.22)');
       coreGrad.addColorStop(1, 'rgba(0,209,233,0)');
@@ -210,7 +198,6 @@ export default function DataSphere() {
       ctx.fillStyle = coreGrad;
       ctx.fill();
 
-      // Bright center point
       ctx.beginPath();
       ctx.arc(scx, scy, sr * 0.075, 0, Math.PI * 2);
       ctx.fillStyle = 'rgba(255,255,255,0.88)';
@@ -231,11 +218,16 @@ export default function DataSphere() {
     };
   }, []);
 
-  const kpiCards = [
-    { label: 'Retail Outlets', value: '117,862+', position: { top: '4%', right: '2%' }, delay: '0s', color: '#00D1E9' },
-    { label: 'Field Users', value: '750+', position: { top: '44%', left: '0%' }, delay: '0.5s', color: '#F76F2E' },
-    { label: 'Branches', value: '23', position: { bottom: '22%', right: '0%' }, delay: '1s', color: '#1F7D9F' },
-    { label: 'Rows Processed', value: '100M+', position: { bottom: '4%', left: '2%' }, delay: '1.5s', color: '#00D1E9' },
+  // 7 role badges orbiting the sphere. Positions are tuned to avoid overlap on desktop;
+  // `hideOnMobile` keeps the 3 lowest-priority labels off small screens for clarity.
+  const roleCards = [
+    { label: 'Power BI Developer',     position: { top: '2%',   left: '4%'  }, delay: '0s',   color: '#00D1E9' },
+    { label: 'Data Engineer',          position: { top: '6%',   right: '2%' }, delay: '0.3s', color: '#F76F2E' },
+    { label: 'Business Intelligence',  position: { top: '40%',  left: '-2%' }, delay: '0.6s', color: '#1F7D9F' },
+    { label: 'Data Analyst',           position: { top: '46%',  right: '-2%'}, delay: '0.9s', color: '#00D1E9' },
+    { label: 'Business Analyst',       position: { bottom: '22%', left: '6%'}, delay: '1.2s', color: '#22C55E', hideOnMobile: true },
+    { label: 'Market Survey Analyst',  position: { bottom: '14%', right: '4%'}, delay: '1.5s', color: '#F76F2E', hideOnMobile: true },
+    { label: 'AI Automation Strategic',position: { bottom: '2%', left: '32%'}, delay: '1.8s', color: '#22C55E', hideOnMobile: true },
   ];
 
   return (
@@ -251,24 +243,24 @@ export default function DataSphere() {
         data-testid="datasphere-canvas"
       />
 
-      {kpiCards.map((card, i) => (
+      {roleCards.map((card, i) => (
         <div
           key={i}
-          className="absolute glass rounded-lg px-3.5 py-2.5 pointer-events-none"
+          className={`absolute glass rounded-lg px-2.5 py-1.5 sm:px-3 sm:py-2 pointer-events-none ${card.hideOnMobile ? 'hidden md:block' : ''}`}
           style={{
             ...card.position,
-            animation: `float ${3.5 + i * 0.6}s ease-in-out infinite`,
+            animation: `float ${3.5 + i * 0.5}s ease-in-out infinite`,
             animationDelay: card.delay,
+            borderLeft: `2px solid ${card.color}`,
           }}
-          data-testid={`kpi-card-${i}`}
+          data-testid={`role-badge-${i}`}
         >
-          <div
-            className="font-outfit font-bold text-base leading-none"
-            style={{ color: card.color }}
-          >
-            {card.value}
+          <div className="flex items-center gap-1.5">
+            <span className="w-1 h-1 rounded-full" style={{ background: card.color, boxShadow: `0 0 6px ${card.color}` }} />
+            <span className="text-white/85 text-[9px] sm:text-[11px] font-outfit font-semibold tracking-tight whitespace-nowrap">
+              {card.label}
+            </span>
           </div>
-          <div className="text-[#8BA0B8] text-[10px] mt-1 font-plex">{card.label}</div>
         </div>
       ))}
     </div>

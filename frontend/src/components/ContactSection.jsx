@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MessageCircle, Mail, ArrowRight } from 'lucide-react';
+import { MessageCircle, Mail, Instagram, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function ContactSection() {
@@ -26,11 +26,19 @@ export default function ContactSection() {
       href: 'mailto:lensadata.id@gmail.com',
       testid: 'contact-email',
     },
+    {
+      icon: Instagram,
+      color: '#E1306C',
+      title: 'Instagram',
+      desc: 'Follow our journey, dashboards, and case studies on Instagram.',
+      cta: '@lensa_data.id',
+      href: 'https://www.instagram.com/lensa_data.id',
+      testid: 'contact-instagram',
+    },
   ];
 
   return (
     <section id="contact" className="relative py-20 sm:py-28 section-gradient" data-testid="contact-section">
-      {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full blur-[120px]"
@@ -39,7 +47,6 @@ export default function ContactSection() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6">
-        {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <p className="text-[#00D1E9] text-xs font-outfit tracking-[0.2em] uppercase mb-4">
             {c.overline}
@@ -52,8 +59,7 @@ export default function ContactSection() {
           </p>
         </div>
 
-        {/* Contact Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12 sm:mb-14 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12 sm:mb-14">
           {cards.map((card, i) => (
             <motion.a
               key={i}
@@ -88,7 +94,6 @@ export default function ContactSection() {
           ))}
         </div>
 
-        {/* Primary CTA */}
         <div className="text-center">
           <a
             href="https://s.id/konsultasi-data"

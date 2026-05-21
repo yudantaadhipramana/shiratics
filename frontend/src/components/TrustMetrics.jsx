@@ -1,12 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Building2, Users2, Network, Database } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+
+const METRIC_ICONS = [Building2, Users2, Network, Database];
+const METRIC_GLOW = [
+  'rgba(0,209,233,0.55)',
+  'rgba(247,111,46,0.55)',
+  'rgba(31,125,159,0.55)',
+  'rgba(0,209,233,0.55)',
+];
 
 function useCountUp(targetStr, isActive, duration = 2200) {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     if (!isActive) return;
-    const numeric = parseInt(targetStr.replace(/[^0-9]/g, '')) || 0;
+    const numeric = parseInt(targetStr.replace(/[^0-9]/g, ''), 10) || 0;
     if (numeric === 0) return;
 
     let rafId;
@@ -30,23 +39,51 @@ function useCountUp(targetStr, isActive, duration = 2200) {
   return current;
 }
 
-function MetricItem({ rawValue, label, isActive, delay }) {
+function MetricItem({ rawValue, label, desc, isActive, index }) {
   const suffix = rawValue.replace(/[0-9.]/g, '');
   const count = useCountUp(rawValue, isActive, 2000);
-  const isNational = rawValue === 'National' || rawValue === 'Nasional';
+  const Icon = METRIC_ICONS[index] || Building2;
+  const glow = METRIC_GLOW[index] || 'rgba(0,209,233,0.55)';
 
   return (
     <div
-      className="flex flex-col items-center text-center py-10 px-4 group"
-      style={{ animationDelay: `${delay}ms` }}
+      className="group relative flex flex-col items-center text-center px-3 sm:px-5 py-7 sm:py-9 transition-all duration-300"
+      data-testid={`metric-card-${index}`}
     >
+      {/* Hover pulse ring */}
       <span
-        className="font-outfit font-bold text-3xl sm:text-4xl lg:text-5xl counter-text leading-none mb-2 gradient-text-cyan"
-        data-testid={`metric-value-${label.toLowerCase().replace(/\s+/g, '-')}`}
+        className="pointer-events-none absolute inset-x-6 top-3 h-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        style={{ background: glow, filter: 'blur(10px)' }}
+      />
+
+      <div
+        className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110"
+        style={{
+          background: 'rgba(255,255,255,0.04)',
+          border: '1px solid rgba(0,209,233,0.22)',
+        }}
       >
-        {isNational ? rawValue : (isActive ? `${count}${suffix}` : `0${suffix}`)}
+        <Icon size={16} color="#00D1E9" strokeWidth={1.8} />
+      </div>
+
+      <span
+        className="font-outfit font-bold text-4xl sm:text-5xl lg:text-[3.4rem] leading-none mb-2 gradient-text-cyan transition-all duration-300 group-hover:tracking-tight"
+        data-testid={`metric-value-${index}`}
+        style={{
+          textShadow: `0 0 28px ${glow}, 0 0 60px ${glow}`,
+          filter: 'drop-shadow(0 0 12px rgba(0,209,233,0.25))',
+        }}
+      >
+        {isActive ? `${count}${suffix}` : `0${suffix}`}
       </span>
-      <span className="text-[#8BA0B8] text-sm font-plex leading-snug">{label}</span>
+
+      <span className="text-white text-xs sm:text-sm font-outfit font-semibold tracking-tight leading-snug mb-1 px-1">
+        {label}
+      </span>
+
+      <span className="text-[#8BA0B8] text-[10px] sm:text-xs font-plex leading-relaxed max-w-[200px] hidden sm:block">
+        {desc}
+      </span>
     </div>
   );
 }
@@ -79,14 +116,15 @@ export default function TrustMetrics() {
       <div className="absolute bottom-0 left-0 right-0 h-px shimmer-border" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 divide-x divide-white/8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-white/8">
           {metrics.map((metric, i) => (
             <MetricItem
               key={i}
+              index={i}
               rawValue={metric.value}
               label={metric.label}
+              desc={metric.desc}
               isActive={isVisible}
-              delay={i * 120}
             />
           ))}
         </div>

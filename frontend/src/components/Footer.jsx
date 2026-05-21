@@ -82,6 +82,15 @@ export default function Footer() {
                 lensadata.id@gmail.com
               </a>
               <a
+                href="https://www.instagram.com/lensa_data.id"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#8BA0B8] hover:text-[#E1306C] text-sm transition-colors duration-200 font-plex"
+                data-testid="footer-instagram"
+              >
+                @lensa_data.id
+              </a>
+              <a
                 href="https://s.id/konsultasi-data"
                 target="_blank"
                 rel="noopener noreferrer"
