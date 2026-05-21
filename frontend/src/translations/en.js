@@ -7,7 +7,7 @@ export const en = {
     getStarted: 'Get Started',
   },
   hero: {
-    tagline: '"Tajam Melihat, Sigap Bertindak"',
+    tagline: '"See Deeper. Act Smarter."',
     headline1: 'Your Business Is Growing.',
     headline2: 'But Is It Really Under Control?',
     subheadline: 'LensaData helps enterprise teams detect hidden inefficiencies, data inconsistencies, and profit leaks.',
@@ -118,7 +118,7 @@ export const en = {
     cta: 'Start Free Data Audit',
   },
   footer: {
-    tagline: '"Tajam Melihat, Sigap Bertindak"',
+    tagline: '"See Deeper. Act Smarter."',
     parent: 'A product of PT FINXINA LINTAS BENUA',
     rights: '© 2025 LensaData. All rights reserved.',
     links: {

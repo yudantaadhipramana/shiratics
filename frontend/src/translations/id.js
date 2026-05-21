@@ -7,7 +7,7 @@ export const id = {
     getStarted: 'Mulai Sekarang',
   },
   hero: {
-    tagline: '"Tajam Melihat, Sigap Bertindak"',
+    tagline: '"See Deeper. Act Smarter."',
     headline1: 'Bisnis Anda Bertumbuh.',
     headline2: 'Tapi Benar-Benar Terkontrol?',
     subheadline: 'LensaData membantu tim enterprise mendeteksi inefisiensi tersembunyi, inkonsistensi data, dan kebocoran profit.',
@@ -118,7 +118,7 @@ export const id = {
     cta: 'Mulai Audit Data Gratis',
   },
   footer: {
-    tagline: '"Tajam Melihat, Sigap Bertindak"',
+    tagline: '"See Deeper. Act Smarter."',
     parent: 'Produk dari PT FINXINA LINTAS BENUA',
     rights: '© 2025 LensaData. Hak cipta dilindungi.',
     links: {
