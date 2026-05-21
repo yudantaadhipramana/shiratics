@@ -84,7 +84,7 @@ function CaseStudyCard({ study, meta, index }) {
       </p>
 
       <a
-      href="https://s.id/LensaData"
+      href="https://drive.google.com/file/d/1-Z2wLzkz33_yftJE7XXgEYJmDjnKvUBl/preview"
       target="_blank"
       rel="noopener noreferrer"
       className="relative inline-flex items-center gap-1.5 mt-5 pt-4 border-t border-white/5 text-xs font-outfit hover:gap-2 transition-all"
