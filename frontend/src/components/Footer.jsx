@@ -75,11 +75,11 @@ export default function Footer() {
                 +62 851 1757 7707
               </a>
               <a
-                href="mailto:lensadata.id@gmail.com"
+                href="mailto:mail@lensadata.my.id"
                 className="text-[#8BA0B8] hover:text-[#00D1E9] text-sm transition-colors duration-200 font-plex"
                 data-testid="footer-email"
               >
-                lensadata.id@gmail.com
+                mail@lensadata.my.id
               </a>
               <a
                 href="https://www.instagram.com/lensa_data.id"

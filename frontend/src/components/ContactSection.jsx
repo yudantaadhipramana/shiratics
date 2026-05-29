@@ -22,8 +22,8 @@ export default function ContactSection() {
       color: '#00D1E9',
       title: c.email,
       desc: c.emailDesc,
-      cta: 'lensadata.id@gmail.com',
-      href: 'mailto:lensadata.id@gmail.com',
+      cta: 'mail@lensadata.my.id',
+      href: 'mailto:mail@lensadata.my.id',
       testid: 'contact-email',
     },
     {

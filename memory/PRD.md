@@ -44,7 +44,7 @@ Premium landing page for LensaData, a Business Intelligence & Data Analytics com
 ### Contact Integration
 - WhatsApp / Primary CTA: https://s.id/konsultasi-data
 - Direct WA: +6285117577707 (wa.me)
-- Email: lensadata.id@gmail.com
+- Email: mail@lensadata.my.id
 
 ### Mobile Responsiveness (verified 2026-02-20)
 - Tested at 360px and 390px widths — zero horizontal overflow
