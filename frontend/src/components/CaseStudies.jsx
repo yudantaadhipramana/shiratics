@@ -84,7 +84,7 @@ function CaseStudyCard({ study, meta, index }) {
       </p>
 
       <a
-      href="https://drive.google.com/file/d/1-Z2wLzkz33_yftJE7XXgEYJmDjnKvUBl/preview"
+      href="https://drive.google.com/file/d/1yH2qbP0jSmaUesX5_oKON3xS_69RDbuK/preview"
       target="_blank"
       rel="noopener noreferrer"
       className="relative inline-flex items-center gap-1.5 mt-5 pt-4 border-t border-white/5 text-xs font-outfit hover:gap-2 transition-all"

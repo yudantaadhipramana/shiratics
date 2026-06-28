@@ -10,7 +10,7 @@ export const id = {
     tagline: '"See Deeper. Act Smarter."',
     headline1: 'Bisnis Anda Bertumbuh.',
     headline2: 'Tapi Benar-Benar Terkontrol?',
-    subheadline: 'LensaData membantu tim enterprise mendeteksi inefisiensi tersembunyi, inkonsistensi data, dan kebocoran profit.',
+    subheadline: 'Shiratics membantu tim enterprise mendeteksi inefisiensi tersembunyi, inkonsistensi data, dan kebocoran profit.',
     built: 'Dibangun untuk Pemilik, Pemimpin Keuangan, dan Tim Operasional.',
     cta1: 'Audit Data Gratis',
     cta2: 'Lihat Studi Kasus',
@@ -45,7 +45,7 @@ export const id = {
   },
   story: {
     title: 'Dari Kekacauan Data ke Kecerdasan Bisnis',
-    subtitle: 'Lihat bagaimana LensaData mengubah realitas operasional Anda',
+    subtitle: 'Lihat bagaimana Shiratics mengubah realitas operasional Anda',
     stages: [
       { id: 'chaos', label: 'KEKACAUAN', title: 'Data Tersebar',
         desc: 'File Excel berganda, sistem terputus, nol visibilitas antar cabang. Keputusan terlambat. Revenue tersembunyi.' },
@@ -95,7 +95,7 @@ export const id = {
     overline: 'DIBANGUN OLEH PRAKTISI',
     title: 'Pengalaman Enterprise BI, Terbangun di Setiap Produk',
     sectionTitle: 'Tim Kami',
-    bio: 'Tim praktisi data berpengalaman dengan keahlian langsung di FMCG, Manufaktur Tembakau, IT Consulting, analitik terakselerasi GPU, dan AI engineering. LensaData dibangun untuk memecahkan masalah yang kami alami langsung: data terfragmentasi, keputusan terlambat, dan absennya alat enterprise untuk bisnis Indonesia yang berkembang.',
+    bio: 'Tim praktisi data berpengalaman dengan keahlian langsung di FMCG, Manufaktur Tembakau, IT Consulting, analitik terakselerasi GPU, dan AI engineering. Shiratics dibangun untuk memecahkan masalah yang kami alami langsung: data terfragmentasi, keputusan terlambat, dan absennya alat enterprise untuk bisnis Indonesia yang berkembang.',
     industries: ['FMCG', 'Manufaktur Tembakau', 'IT Consulting', 'Spesialis GPU', 'AI Engineering'],
     achievements: [
       'Presenter Analitik Nasional',
@@ -120,7 +120,7 @@ export const id = {
   footer: {
     tagline: '"See Deeper. Act Smarter."',
     parent: 'Produk dari PT FINXINA LINTAS BENUA',
-    rights: '© 2025 LensaData. Hak cipta dilindungi.',
+    rights: '© 2025 Shiratics. Hak cipta dilindungi.',
     links: {
       services: 'Layanan',
       caseStudies: 'Studi Kasus',

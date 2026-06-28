@@ -5,7 +5,7 @@ import { MessageCircle } from 'lucide-react';
 export default function FloatingActions() {
   return (
     <motion.a
-      href="https://s.id/konsultasi-data"
+      href="https://wa.me/+6282259907655"
       target="_blank"
       rel="noopener noreferrer"
       data-testid="fab-whatsapp"

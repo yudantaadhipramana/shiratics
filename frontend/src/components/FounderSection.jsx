@@ -5,25 +5,32 @@ import { useLanguage } from '../context/LanguageContext';
 
 const TEAM = [
   {
-    name: 'Yudanta Adhipramana',
-    role: 'Founder & Lead Architect',
-    accent: '#F76F2E',
-    img: 'https://customer-assets.emergentagent.com/job_data-core-sphere/artifacts/sh5f7uo6_Akselo%20Founder%20-%20DANTA%20%28Fin%29.jpg',
-    testid: 'team-photo-danta',
+    name: 'Kyai Akbar Saleh',
+    role: 'Wisdom & Insight Advisor',
+    accent: '#1F7D9F',
+    img: process.env.PUBLIC_URL + '/founder-kyai.jpg',
+    testid: 'team-photo-kyai',
   },
   {
     name: 'Zainuddin Fanani',
-    role: 'Co-Founder',
+    role: 'Chief Executive Officer',
     accent: '#00D1E9',
-    img: 'https://customer-assets.emergentagent.com/job_data-core-sphere/artifacts/bi9y4y54_Akselo%20Founder%20-%20ZAYN%20%28Fin%29.jpg',
-    testid: 'team-photo-zayn',
+    img: process.env.PUBLIC_URL + '/founder-zainuddin.jpg',
+    testid: 'team-photo-zainuddin',
   },
   {
-    name: 'Imron Rosyadi',
-    role: 'AI Engineer',
+    name: 'Yudanta Adhipramana',
+    role: 'Chief Technology Officer',
+    accent: '#F76F2E',
+    img: process.env.PUBLIC_URL + '/founder-yudanta.jpg',
+    testid: 'team-photo-yudanta',
+  },
+  {
+    name: 'Andi Alhasan',
+    role: 'Chief Marketing Officer',
     accent: '#22C55E',
-    img: 'https://customer-assets.emergentagent.com/job_data-core-sphere/artifacts/xiytxpls_Akselo%20Founder%20-%20IMRON%20%28Fin%29.jpg',
-    testid: 'team-photo-imron',
+    img: process.env.PUBLIC_URL + '/founder-andi.jpg',
+    testid: 'team-photo-andi',
   },
 ];
 
@@ -62,13 +69,12 @@ export default function FounderSection() {
           <p className="text-xs font-outfit tracking-[0.2em] uppercase text-white/40 text-center mb-7">
             {f.sectionTitle}
           </p>
-          <div className="grid grid-cols-3 gap-3 sm:gap-5 max-w-4xl mx-auto">
+          <div className="grid grid-cols-4 gap-3 sm:gap-4 max-w-full mx-auto">
             {TEAM.map((m, i) => (
               <div
                 key={m.testid}
                 className="relative group"
                 data-testid={m.testid}
-                style={{ marginTop: i === 1 ? '24px' : i === 2 ? '12px' : 0 }}
               >
                 <div className="relative overflow-hidden rounded-2xl aspect-[3/4]">
                   <img

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-const LOGO_URL = 'https://customer-assets.emergentagent.com/job_data-core-sphere/artifacts/i30zm9vo_LensaData%20Logo%2002%20-%20Positive%20White.png';
+const LOGO_URL = process.env.PUBLIC_URL + '/logo-negative.png';
 
 export default function Navbar() {
   const { language, toggleLanguage, t } = useLanguage();
@@ -43,7 +43,7 @@ export default function Navbar() {
             onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
             data-testid="navbar-logo-link"
           >
-            <img src={LOGO_URL} alt="LensaData" className="h-10 w-auto" data-testid="navbar-logo" />
+            <img src={process.env.PUBLIC_URL + '/logo-negative.png'} alt="Shiratics" className="h-10 w-auto" data-testid="navbar-logo" />
           </a>
 
           <div className="hidden md:flex items-center gap-8" data-testid="desktop-nav">

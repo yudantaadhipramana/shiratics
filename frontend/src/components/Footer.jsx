@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
-const LOGO_URL = 'https://customer-assets.emergentagent.com/job_data-core-sphere/artifacts/i30zm9vo_LensaData%20Logo%2002%20-%20Positive%20White.png';
+const LOGO_URL = process.env.PUBLIC_URL + '/logo-negative.png';
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -23,13 +23,13 @@ export default function Footer() {
       <div className="absolute top-0 left-0 right-0 h-px shimmer-border" />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-6 py-14 sm:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
 
           {/* Brand */}
           <div className="space-y-5">
             <img
               src={LOGO_URL}
-              alt="LensaData"
+              alt="Shiratics"
               className="h-12 w-auto"
               data-testid="footer-logo"
             />
@@ -66,38 +66,60 @@ export default function Footer() {
             </p>
             <div className="flex flex-col gap-3">
               <a
-                href="https://wa.me/6285117577707"
+                href="https://wa.me/+628****7655"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#8BA0B8] hover:text-[#25D366] text-sm transition-colors duration-200 font-plex"
                 data-testid="footer-whatsapp"
               >
-                +62 851 1757 7707
+                +62 822 5990 7655
               </a>
               <a
-                href="mailto:mail@lensadata.my.id"
+                href="mailto:mail@shiratics.com"
                 className="text-[#8BA0B8] hover:text-[#00D1E9] text-sm transition-colors duration-200 font-plex"
                 data-testid="footer-email"
               >
-                mail@lensadata.my.id
+                mail@shiratics.com
               </a>
               <a
-                href="https://www.instagram.com/lensa_data.id"
+                href="https://www.instagram.com/shiratics/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#8BA0B8] hover:text-[#E1306C] text-sm transition-colors duration-200 font-plex"
                 data-testid="footer-instagram"
               >
-                @lensa_data.id
+                @shiratics
               </a>
               <a
-                href="https://s.id/konsultasi-data"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
                 className="text-[#8BA0B8] hover:text-[#F76F2E] text-sm transition-colors duration-200 font-plex"
                 data-testid="footer-booking"
               >
                 Book Consultation
+              </a>
+            </div>
+          </div>
+
+          {/* Address & Map */}
+          <div className="space-y-4">
+            <p className="text-white text-xs font-outfit font-medium uppercase tracking-[0.15em] mb-5">
+              Office Address
+            </p>
+            <div className="space-y-2">
+              <p className="text-[#8BA0B8] text-xs leading-relaxed font-plex">
+                SOHO Building, 30rd Floor<br />
+                Jl. Let. Jend. MT Haryono Kav. 2<br />
+                Pancoran<br />
+                Jakarta Selatan - Indonesia
+              </p>
+              <a
+                href="https://maps.app.goo.gl/e2kZ7Y7SRLnJkmnt6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#00D1E9] hover:text-white text-xs font-outfit transition-colors duration-200 inline-flex items-center gap-1"
+                data-testid="footer-maps"
+              >
+                View on Maps ↗
               </a>
             </div>
           </div>

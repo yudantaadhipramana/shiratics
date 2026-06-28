@@ -10,7 +10,7 @@ export const en = {
     tagline: '"See Deeper. Act Smarter."',
     headline1: 'Your Business Is Growing.',
     headline2: 'But Is It Really Under Control?',
-    subheadline: 'LensaData helps enterprise teams detect hidden inefficiencies, data inconsistencies, and profit leaks.',
+    subheadline: 'Shiratics helps enterprise teams detect hidden inefficiencies, data inconsistencies, and profit leaks.',
     built: 'Built for Owners, Finance Leaders, and Operational Teams.',
     cta1: 'Get Free Data Audit',
     cta2: 'View Case Studies',
@@ -45,7 +45,7 @@ export const en = {
   },
   story: {
     title: 'From Data Chaos to Business Intelligence',
-    subtitle: 'Watch how LensaData transforms your operational reality',
+    subtitle: 'Watch how Shiratics transforms your operational reality',
     stages: [
       { id: 'chaos', label: 'CHAOS', title: 'Scattered Data',
         desc: 'Multiple Excel files, disconnected systems, zero visibility across branches. Decisions delayed. Revenue hidden.' },
@@ -95,7 +95,7 @@ export const en = {
     overline: 'BUILT BY PRACTITIONERS',
     title: 'Enterprise BI Experience, Built Into Every Product',
     sectionTitle: 'Meet Our Team',
-    bio: 'A team of seasoned data practitioners with hands-on experience across FMCG, Tobacco Manufacturing, IT Consulting, GPU-accelerated analytics, and AI engineering. LensaData was built to solve the problems we have lived through firsthand: fragmented data, delayed decisions, and the absence of enterprise-grade tooling for growing Indonesian businesses.',
+    bio: 'A team of seasoned data practitioners with hands-on experience across FMCG, Tobacco Manufacturing, IT Consulting, GPU-accelerated analytics, and AI engineering. Shiratics was built to solve the problems we have lived through firsthand: fragmented data, delayed decisions, and the absence of enterprise-grade tooling for growing Indonesian businesses.',
     industries: ['FMCG', 'Tobacco Manufacturing', 'IT Consulting', 'GPU Specialist', 'AI Engineering'],
     achievements: [
       'National Analytics Presenter',
@@ -120,7 +120,7 @@ export const en = {
   footer: {
     tagline: '"See Deeper. Act Smarter."',
     parent: 'A product of PT FINXINA LINTAS BENUA',
-    rights: '© 2025 LensaData. All rights reserved.',
+    rights: '© 2025 Shiratics. All rights reserved.',
     links: {
       services: 'Services',
       caseStudies: 'Case Studies',

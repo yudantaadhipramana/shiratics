@@ -14,7 +14,7 @@ export default function ContactSection() {
       title: c.whatsapp,
       desc: c.whatsappDesc,
       cta: 'Chat on WhatsApp',
-      href: 'https://s.id/konsultasi-data',
+      href: 'https://wa.me/+6282259907655',
       testid: 'contact-whatsapp',
     },
     {
@@ -22,8 +22,8 @@ export default function ContactSection() {
       color: '#00D1E9',
       title: c.email,
       desc: c.emailDesc,
-      cta: 'mail@lensadata.my.id',
-      href: 'mailto:mail@lensadata.my.id',
+      cta: 'mail@shiratics.com',
+      href: 'mailto:mail@shiratics.com',
       testid: 'contact-email',
     },
     {
@@ -31,8 +31,8 @@ export default function ContactSection() {
       color: '#E1306C',
       title: 'Instagram',
       desc: 'Follow our journey, dashboards, and case studies on Instagram.',
-      cta: '@lensa_data.id',
-      href: 'https://www.instagram.com/lensa_data.id',
+      cta: '@shiratics',
+      href: '#',
       testid: 'contact-instagram',
     },
   ];
@@ -96,7 +96,7 @@ export default function ContactSection() {
 
         <div className="text-center">
           <a
-            href="https://s.id/konsultasi-data"
+            href="https://wa.me/+6282259907655"
             target="_blank"
             rel="noopener noreferrer"
             data-testid="contact-main-cta"
